@@ -1,0 +1,108 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#Python Template for ES2B4 Assignment
+
+#Name: PABLO NAVAJAS HELGUERO
+#ID : 1604648
+#Assignment: assignment_a4.py
+#Section: A4
+
+### My code:
+
+Message = False
+#Create the loop
+while Message == False:
+    #Set the Message to be a String and ask user to enter it
+    Message= str(input("Introduce your Message: "))
+    #Ask user to enter a shift
+    Shift= input("Introduce the shift value: ")
+    #Create the condition to terminate the program
+    if Message == "Exit cipher":
+        print("Exiting from the program!")
+        break
+    #Check if the Shift introduced by the user is valid
+    try:
+        shiftint = int(Shift)
+    #If the Shift is not valid, inform the user and restart loop
+    except:
+        print("That is not a valid shift. Enter a number! ")
+        Message = False
+        continue
+    #Display nicely the result
+    print("")
+    print("Your encrypted message is: ")
+    #Set the program to analyse the Message 
+    for c in Message:
+        #Transform the characters into their ASCII code
+        ascii_code1 = ord(c)
+        #Check if the Character is a Number
+        if ascii_code1 in range(48,57):
+            #Check if the Shift is too big or too small for the Range
+            if shiftint > 10 or shiftint < -10:
+                #Adjust it
+                newShift = shiftint - (10*(shiftint//10))
+            #Check if the Shift is adecuate for the Range
+            else:
+                newShift = shiftint
+            #Encrypt the number through their ASCII code
+            ascii_code2 = ascii_code1 + newShift
+            #Check if the Encrypted number exceeds the Numbers range (48,57)
+            if (ascii_code2 > 57):
+                #Adjust it so that it returns to the minimum value when it exceeds the maximum
+                ascii_code3 = ascii_code2 - 10
+            #If it has not exceeded the maximum, leave it as it is
+            else:
+                ascii_code3 = ascii_code2
+            #Transform the ASCII code back into a character (a Number)
+            Encryptedcode = chr(ascii_code3)
+        #Check if the Character is an Uppercase Letter
+        elif ascii_code1 in range(65,90):
+            #Check if the Shift is too big or too small for the Range
+            if shiftint > 26 or shiftint < -26:
+                #Adjust it
+                newShift = shiftint - (26*(shiftint//26))
+            #Check if the Shift is adecuate for the Range
+            else:
+                newShift = shiftint
+            #Encrypt the letter through their ASCII code
+            ascii_code2 = ascii_code1 + newShift
+            #Check if the Encrypted letter exceeds the Uppercase letters' range (65,90)
+            if (ascii_code2 > 90):
+                #Adjust it so that it returns to the minimum value when it exceeds the maximum
+                ascii_code3 = ascii_code2 - 26
+            #If it has not exceeded the maximum, leave it as it is
+            else:
+                ascii_code3 = ascii_code2
+            #Transform the ASCII code back into a character (an Uppercase letter) 
+            Encryptedcode = chr(ascii_code3)
+        #Check if the Character is a Lowercase Letter
+        elif ascii_code1 in range(97,122):
+            #Check if the Shift is too big or too small for the Range
+            if shiftint > 26 or shiftint < -26:
+                #Adjust it
+                newShift = shiftint - (26*(shiftint//26))
+            #Check if the Shift is adecuate for the Range
+            else:
+                newShift = shiftint
+            #Encrypt the letter through their ASCII code
+            ascii_code2 = (ascii_code1 + newShift)
+            #Check if the Encrypted letter exceeds the Lowercase letters' range (97,122)
+            if (ascii_code2 > 122):
+                #Adjust it so that it returns to the minimum value when it exceeds the maximum
+                ascii_code3 = ascii_code2 - 26
+            #If it has not exceeded the maximum, leave it as it is
+            else:
+                ascii_code3 = ascii_code2
+            #Transform the ASCII code back into a character (a Lowercase letter)
+            Encryptedcode = chr(ascii_code3)
+        #Check if the Character is a Special Character
+        else:
+            #Leave it as it is
+            ascii_code3 = ascii_code1
+            Encryptedcode = chr(ascii_code3)
+        #Print all the Encrypted characters in line
+        print(Encryptedcode, end='')
+    #Leave a blank line to separate it from the next loop
+    print("")
+    #Set Message to False again to close the intentional infinite loop
+    Message = False
