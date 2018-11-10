@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#Python Template for ES2B4 Assignment
+
+#Name: PABLO NAVAJAS HELGUERO
+#ID : 1604648
+#Assignment: assignment_a3_3.py
+#Section: A3-3
+
+### My code:
+
+#Ask user to enter the value
+NumberA= input("Introduce number: ")
+
+#Set the value of the Factorial to 1 to use it in the loop
+Factorial=1
+
+#Create a loop so that we can exit it in case of Error
+for a in NumberA:
+    
+    #Check if the Input is a number
+    try:
+        NumberB = int(NumberA)
+        
+    #In case it is not a number, inform user and exit program
+    except:
+        print("That is not a NUMBER. You need to enter a valid number. ")
+        break
+    
+    #In case it is a number smaller than zero: 
+    if NumberB<0:
+        
+        #Inform user factorials of negative numbers do not exist and exit program
+        print("Sorry, factorials of negative numbers do not exist.")
+        break
+    
+    #In case it is zero:
+    elif NumberB==0:
+        
+        #Inform user that the factorial of 0 is 1, and close program
+        print("The factorial of 0 is 1.")
+        break
+    
+    #In case it is a valid number:
+    else:
+        
+        #Create a loop that finds the Factorial of a number
+        for i in range(1,NumberB + 1):
+            Factorial = Factorial * i
+            
+        #Print the solution and close program
+        print ("The factorial of", NumberA, " is ", Factorial,".")
+        break
+        
