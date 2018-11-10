@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#Python Template for ES2B4 Assignment
+
+#Name: PABLO NAVAJAS HELGUERO
+#ID : 1604648
+#Assignment: assignment_a2.py
+#Section: A2
+
+### My code:
+
+#Create list of game options:
+g=["Rock","Paper","Scissors"]
+
+#Ask both players to Enter their options
+playerA = input("Player 1! Do you choose Rock, Paper or Scissors? : ")
+playerB = input("And Player 2! Do you choose Rock, Paper or Scissors? : ")
+
+#Check if they entered the same option
+if playerA == playerB:
+    
+    #If so, print that it is a tie
+    print("It's a Tie!")
+    
+#Check if Player 1 entered "Rock"
+elif playerA == "Rock":
+    
+    #If Player 2 has entered "Paper", Player 1 loses
+    if playerB == "Paper":
+        print("Player 2 wins..!!!")
+        
+    #If Player 2 has entered "Scissors", Player 1 wins
+    elif playerB == "Scissors":
+        print("Player 1 wins..!!!")
+        
+    #If Player 2 has entered an invalid input inform the player
+    else:
+        print("Player 2, you have entered a wrong choice")
+        
+#Check if Player 1 entered "Paper"
+elif playerA == "Paper":
+    
+    #If Player 2 has entered "Scissors", Player 1 loses
+    if playerB == "Scissors":
+        print("Player 2 wins..!!!")
+        
+    #If Player 2 has entered "Rock", Player 1 wins
+    elif playerB == "Rock":
+        print("Player 1 wins..!!!")
+        
+    #If Player 2 has entered an invalid input inform the player
+    else:
+        print("Player 2, you have entered a wrong choice")
+        
+#Check if Player 1 entered "Scissors"
+elif playerA == "Scissors":
+    
+    #If Player 2 has entered "Rock", Player 1 loses
+    if playerB == "Rock":
+        print("Player 2 wins..!!!")
+        
+    #If Player 2 has entered "Paper", Player 1 wins
+    elif playerB == "Paper":
+        print("Player 1 wins..!!!")
+        
+    #If Player 2 has entered an invalid input inform the player
+    else:
+        print("Player 2, you have entered a wrong choice")
+        
+#If Player 1 has entered an invalid input inform the player
+else:
+    print("Player 1, you have entered a wrong choice")
+    
