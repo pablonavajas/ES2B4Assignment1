@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#Python Template for ES2B4 Assignment
+
+#Name: PABLO NAVAJAS HELGUERO
+#ID : 1604648
+#Assignment: assignment_a1_2.py
+#Section: A1-2
+
+### My code:
+
+A=((7+9)**(1/2))*3
+
+B=(3+5)/(2*3)
+
+C=(4-7)**3
+
+D=(-19+100)**(1/4)
+
+print(A)
+
+print(B)
+
+print(C)
+
+print(D)
+    
