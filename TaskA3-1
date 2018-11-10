@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#Python Template for ES2B4 Assignment
+
+#Name: PABLO NAVAJAS HELGUERO
+#ID : 1604648
+#Assignment: assignment_a3_1.py
+#Section: A3-1
+
+### My code:
+
+#Set the Input to false to use a boolean condition in the loop
+MyString1 = False
+
+#Create a loop that checks the input
+while MyString1 == False:
+    
+    #Ask the user to introduce a Palindrome and set the input to be a string
+    MyString1 = str(input("Introduce your Palindrome: "))
+    
+    #Ignore the Case of the letters as it should not affect the outcome
+    MyString2 = MyString1.casefold()
+    
+    #Ignore punctuation and whitespace characters as they should not affect the outcome either
+    MyString3 = MyString2.translate(str.maketrans('','',"?!,.' "))
+    
+    #Create a String whose components are the reversed characters of the adapted Input
+    ReversedString  = MyString3[::-1]
+    
+    #If the reversed String and the adapted Input are equal confirm the palindrome
+    if MyString3 == ReversedString:
+        print("Yes. ", MyString1, " is a Palindrome!")
+        
+    #If they are different, print that it is not a palindrome
+    else:
+        print("Sorry. ", MyString1, " is not a Palindrome!")
+        
