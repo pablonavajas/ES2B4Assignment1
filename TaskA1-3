@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#Python Template for ES2B4 Assignment
+
+#Name: PABLO NAVAJAS HELGUERO
+#ID : 1604648
+#Assignment: assignment_a1_3.py
+#Section: A1-3
+
+### My code:
+
+A=(((11-3)**(1/3))*((((4**2)+2)/3**2)+(((3**2)+2)/11)))/((6*(3**2)/2)-(((64)**(1/2))*3)+3)
+
+B=11-3**1/3*4**2+2/3**2+2/11/6*3**2/2-64**1/2*3+3
+
+print(A)
+
+print(B)
+
